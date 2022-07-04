@@ -71,7 +71,7 @@ const app = Vue.createApp({
         },
         print() {
             const array = JSON.parse(JSON.stringify(this.json_arr))
-            navigator.clipboard.writeText(JSON.stringify(array)).then(
+            navigator.clipboard.writeText(JSON.stringify(array, null, 4)).then(
                 r => alert("JSON copied to clipboard "));
         }
     },
