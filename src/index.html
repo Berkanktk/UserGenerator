@@ -2,33 +2,89 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Random User Generator</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet/less" href="style.less">
+        <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+        <script src="https://unpkg.com/vue@next"></script>
+        <script defer src="app.js"></script>
     </head>
 
     <body>
         <div id="app">
             <img :class="gender" :src="picture" :alt="`${firstName} ${lastName}`">
             <h1>{{title}}. {{firstName}} {{lastName}}</h1>
-            <h3>Email: {{email}}</h3>
-            <h3>Nationality: {{nat}}</h3>
-            <h3>Cell: {{cell}}</h3>
-            <h3>Phone: {{phone}}</h3>
-            <h3>Age: {{age}}</h3>
-            <h3>Address: {{street}} {{streetNo}}</h3>
-            <h3>City: {{city}}</h3>
-            <h3>Country: {{country}}</h3>
-            <h3>State: {{state}}</h3>
-            <h3>Post Code: {{postcode}}</h3>
-            <h3>Username: {{username}}</h3>
-            <h3>Password: {{password}}</h3>
-            <h3>Account age: {{reg_age}}</h3>
-            <h3>Registration date: {{reg_date}}</h3>
-            <h3>UUID: {{uuid}}</h3>
-            <h3>MD5: {{pw_md5}}</h3>
-            <h3>SHA256: {{pw_sha256}}</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Email</td>
+                    <td>{{email}}</td>
+                </tr>
+                <tr>
+                    <td>Nationality</td>
+                    <td>{{nat}}</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>{{phone}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{age}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{street}} {{streetNo}}</td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td>{{city}}</td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>{{country}}</td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td>{{state}}</td>
+                </tr>
+                <tr>
+                    <td>Post Code</td>
+                    <td>{{postcode}}</td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td>{{username}}</td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>{{password}}</td>
+                </tr>
+                <tr>
+                    <td>Account age</td>
+                    <td>{{reg_age}}</td>
+                </tr>
+                <tr>
+                    <td>UUID</td>
+                    <td>{{uuid}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="box">
+                <button v-on:click="print(json_arr)">Copy as JSON</button>
+                <button v-on:click="getUser()" :class="gender">Get Random User</button>
+            </div>
+
         </div>
-        <script src="https://unpkg.com/vue@next"></script>
-        <script src="app.js"></script>
     </body>
 </html>
+

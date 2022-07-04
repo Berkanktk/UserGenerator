@@ -22,12 +22,14 @@ const app = Vue.createApp({
 
             username: 'Berkanktk',
             password: 'helloworld',
-            uuid: '5d4awd4q184da2w56d8q6w',
+            uuid: 'ab72a9ec-5fff-4ae4-806f-dc43fcc59861',
             pw_md5: 'fc5e038d38a57032085441e7fe7010b0',
             pw_sha256: '936a185caaa266bb9cbe981e9e05cb78cd732b0b3280eb944412bb6f8f8f07af',
 
             reg_age: '21',
-            reg_date: '2018-10-31T21:29:59.315'
+            reg_date: '2018-10-31T21:29:59.315',
+
+            json_arr: {}
 
         }
     },
@@ -35,6 +37,7 @@ const app = Vue.createApp({
         async getUser() {
             const res = await fetch('https://randomuser.me/api/')
             const { results } = await res.json()
+            this.json_arr = results[0]
 
             // console.log(results)
 
@@ -65,8 +68,12 @@ const app = Vue.createApp({
 
             this.reg_age = results[0].registered.age
             this.reg_date = results[0].registered.date
-
         },
+        print() {
+            const array = JSON.parse(JSON.stringify(this.json_arr))
+            navigator.clipboard.writeText(JSON.stringify(array)).then(
+                r => alert("JSON copied to clipboard "));
+        }
     },
 })
 app.mount('#app')
