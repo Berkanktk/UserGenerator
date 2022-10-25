@@ -26,7 +26,6 @@ const app = Vue.createApp({
             pw_md5: 'fc5e038d38a57032085441e7fe7010b0',
             pw_sha256: '936a185caaa266bb9cbe981e9e05cb78cd732b0b3280eb944412bb6f8f8f07af',
 
-            reg_age: '21',
             reg_date: '2018-10-31T21:29:59.315',
 
             json_arr: {}
@@ -66,7 +65,6 @@ const app = Vue.createApp({
             this.pw_md5 = results[0].login.md5
             this.pw_sha256 = results[0].login.sha256
 
-            this.reg_age = results[0].registered.age
             this.reg_date = results[0].registered.date
         },
         print() {
