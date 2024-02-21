@@ -8,7 +8,7 @@
         <title>Random User Generator</title>
         <link rel="stylesheet/less" href="style.less">
         <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
-        <script src="https://unpkg.com/vue@next"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script defer src="app.js"></script>
     </head>
 
@@ -26,51 +26,51 @@
                 <tbody>
                 <tr>
                     <td>Email</td>
-                    <td>{{email}}</td>
+                    <td @click="copyToClipboard(email)">{{email}}</td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
-                    <td>{{nat}}</td>
+                    <td @click="copyToClipboard(email)">{{nat}}</td>
                 </tr>
                 <tr>
                     <td>Phone</td>
-                    <td>{{phone}}</td>
+                    <td @click="copyToClipboard(email)">{{phone}}</td>
                 </tr>
                 <tr>
                     <td>Age</td>
-                    <td>{{age}}</td>
+                    <td @click="copyToClipboard(email)">{{age}}</td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td>{{street}} {{streetNo}}</td>
+                    <td @click="copyToClipboard(email)">{{street}} {{streetNo}}</td>
                 </tr>
                 <tr>
                     <td>City</td>
-                    <td>{{city}}</td>
+                    <td @click="copyToClipboard(email)">{{city}}</td>
                 </tr>
                 <tr>
                     <td>Country</td>
-                    <td>{{country}}</td>
+                    <td @click="copyToClipboard(email)">{{country}}</td>
                 </tr>
                 <tr>
                     <td>State</td>
-                    <td>{{state}}</td>
+                    <td @click="copyToClipboard(email)">{{state}}</td>
                 </tr>
                 <tr>
                     <td>Post Code</td>
-                    <td>{{postcode}}</td>
+                    <td @click="copyToClipboard(email)">{{postcode}}</td>
                 </tr>
                 <tr>
                     <td>Username</td>
-                    <td>{{username}}</td>
+                    <td @click="copyToClipboard(email)">{{username}}</td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td>{{password}}</td>
+                    <td @click="copyToClipboard(email)">{{password}}</td>
                 </tr>
                 <tr>
                     <td>UUID</td>
-                    <td>{{uuid}}</td>
+                    <td @click="copyToClipboard(email)">{{uuid}}</td>
                 </tr>
                 </tbody>
             </table>
